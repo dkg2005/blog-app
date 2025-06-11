@@ -1,0 +1,32 @@
+<div id="<%= dom_id blog_post %>">
+  <p>
+    <strong>Title:</strong>
+    <%= blog_post.title %>
+  </p>
+
+  <p>
+    <strong>Summary:</strong>
+    <%= blog_post.summary %>
+  </p>
+
+  <p>
+    <strong>Body:</strong>
+    <%= blog_post.body %>
+  </p>
+
+  <p>
+    <strong>Tags:</strong>
+    <%= blog_post.tags %>
+  </p>
+
+  <p>
+    <strong>Author:</strong>
+    <%= blog_post.author&.name %>
+  </p>
+
+  <div class="mt-4 flex gap-2">
+    <%= link_to "Show", blog_post_path(blog_post), class: "inline-block px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600" %>
+    <%= link_to "Edit", edit_blog_post_path(blog_post), class: "inline-block px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600" %>
+    <%= button_to "Destroy", blog_post, method: :delete, data: { confirm: "Are you sure?" }, class: "inline-block px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700" %>
+  </div>
+</div>

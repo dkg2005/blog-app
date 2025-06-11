@@ -1,0 +1,41 @@
+<%= form_with(model: blog_post) do |form| %>
+  <% if blog_post.errors.any? %>
+    <div class="mb-4 text-red-600">
+      <h2><%= pluralize(blog_post.errors.count, "error") %> prohibited this blog_post from being saved:</h2>
+      <ul class="list-disc list-inside">
+        <% blog_post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-4">
+    <%= form.label :title, class: "block font-semibold mb-1" %>
+    <%= form.text_field :title, class: "w-full px-3 py-2 border border-blue-300 rounded bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500", placeholder: "Enter title" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :summary, class: "block font-semibold mb-1" %>
+    <%= form.text_field :summary, class: "w-full px-3 py-2 border border-blue-300 rounded bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500", placeholder: "Enter summary" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :body, class: "block font-semibold mb-1" %>
+    <%= form.text_area :body, class: "w-full px-3 py-2 border border-blue-300 rounded bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500", placeholder: "Enter body" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :tags, class: "block font-semibold mb-1" %>
+    <%= form.text_field :tags, class: "w-full px-3 py-2 border border-blue-300 rounded bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500", placeholder: "Enter tags" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :author_id, class: "block font-semibold mb-1" %>
+    <%= form.text_field :author_id, class: "w-full px-3 py-2 border border-blue-300 rounded bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500", placeholder: "Enter author ID" %>
+  </div>
+
+  <div>
+    <%= form.submit "Save", class: "bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" %>
+  </div>
+<% end %>

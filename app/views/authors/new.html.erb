@@ -1,0 +1,13 @@
+<% content_for :title, "New author" %>
+
+<div class="min-h-screen flex flex-col items-center justify-center bg-gray-100 py-8">
+  <h1 class="text-4xl font-extrabold mb-8 text-blue-700 drop-shadow">New Author</h1>
+
+  <div class="bg-white rounded-xl shadow-lg p-8 w-full max-w-lg border border-blue-100">
+    <%= render "form", author: @author %>
+  </div>
+
+  <div class="mt-8 ">
+    <%= link_to "Back to authors", authors_path, class: "text-blue-600 hover:underline text-lg" %>
+  </div>
+</div>

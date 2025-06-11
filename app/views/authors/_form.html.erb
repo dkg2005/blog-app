@@ -1,0 +1,31 @@
+<%= form_with(model: author) do |form| %>
+  <% if author.errors.any? %>
+    <div class="mb-4 text-red-600">
+      <h2><%= pluralize(author.errors.count, "error") %> prohibited this author from being saved:</h2>
+      <ul>
+        <% author.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-4">
+    <%= form.label :name, class: "block font-semibold mb-1" %>
+    <%= form.text_field :name, class: "w-full px-3 py-2 border border-blue-300 rounded bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500", placeholder: "Enter name" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :email, class: "block font-semibold mb-1" %>
+    <%= form.email_field :email, class: "w-full px-3 py-2 border border-blue-300 rounded bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500", placeholder: "Enter email" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :description, class: "block font-semibold mb-1" %>
+    <%= form.text_area :description, class: "w-full px-3 py-2 border border-blue-300 rounded bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500", placeholder: "Enter description" %>
+  </div>
+
+  <div>
+    <%= form.submit class: "bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" %>
+  </div>
+<% end %>
