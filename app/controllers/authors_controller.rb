@@ -15,7 +15,6 @@ class AuthorsController < ApplicationController
     @author = Author.new
   end
 
-  # GET /authors/1/edit
   def edit
   end
 
